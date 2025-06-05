@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookings & Feedback - Elite Sports Club</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Elite Sports Club</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="dashboard.html" class="nav-link">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a href="profile.html" class="nav-link">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a href="bookings.html" class="nav-link active">Bookings & Feedback</a>
+                </li>
+                <li class="nav-item" id="admin-nav" style="display: none;">
+                    <a href="admin.html" class="nav-link">Admin</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" id="logout-btn">Logout</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="bookings-main">
+        <div class="container">
+            <div class="bookings-header">
+                <h1>Bookings & Feedback</h1>
+                <p>Manage your reservations and provide feedback</p>
+            </div>
+
+            <!-- Section Navigation -->
+            <div class="section-nav">
+                <button class="section-btn active" data-section="facility-booking">Facility Booking</button>
+                <button class="section-btn" data-section="class-enrollment">Class Enrollment</button>
+                <button class="section-btn" data-section="complaint">Submit Feedback</button>
+            </div>
+
+            <!-- Facility Booking Section -->
+            <div class="booking-section active" id="facility-booking">
+                <div class="section-card">
+                    <h2>Book a Facility</h2>
+                    <p>Reserve your preferred facility for your workout session</p>
+                    
+                    <form id="facility-booking-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="facility-type">Facility Type</label>
+                                <select id="facility-type" name="facility" required>
+                                    <option value="">Select a facility</option>
+                                    <option value="gym">Modern Gym</option>
+                                    <option value="pool">Swimming Pool</option>
+                                    <option value="tennis">Tennis Court</option>
+                                    <option value="basketball">Basketball Court</option>
+                                    <option value="yoga-room">Yoga Room</option>
+                                    <option value="squash">Squash Court</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="booking-date">Date</label>
+                                <input type="date" id="booking-date" name="date" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="booking-time">Time Slot</label>
+                                <select id="booking-time" name="time" required>
+                                    <option value="">Select time</option>
+                                    <option value="06:00">6:00 AM - 7:00 AM</option>
+                                    <option value="07:00">7:00 AM - 8:00 AM</option>
+                                    <option value="08:00">8:00 AM - 9:00 AM</option>
+                                    <option value="09:00">9:00 AM - 10:00 AM</option>
+                                    <option value="10:00">10:00 AM - 11:00 AM</option>
+                                    <option value="11:00">11:00 AM - 12:00 PM</option>
+                                    <option value="12:00">12:00 PM - 1:00 PM</option>
+                                    <option value="13:00">1:00 PM - 2:00 PM</option>
+                                    <option value="14:00">2:00 PM - 3:00 PM</option>
+                                    <option value="15:00">3:00 PM - 4:00 PM</option>
+                                    <option value="16:00">4:00 PM - 5:00 PM</option>
+                                    <option value="17:00">5:00 PM - 6:00 PM</option>
+                                    <option value="18:00">6:00 PM - 7:00 PM</option>
+                                    <option value="19:00">7:00 PM - 8:00 PM</option>
+                                    <option value="20:00">8:00 PM - 9:00 PM</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="availability-check" id="availability-status" style="display: none;">
+                            <div class="availability-message"></div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Book Facility</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Class Enrollment Section -->
+            <div class="booking-section" id="class-enrollment">
+                <div class="section-card">
+                    <h2>Enroll in Classes</h2>
+                    <p>Join our scheduled fitness classes and training sessions</p>
+                    
+                    <div class="classes-grid" id="available-classes">
+                        <!-- Classes will be loaded dynamically -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Complaint Section -->
+            <div class="booking-section" id="complaint">
+                <div class="section-card">
+                    <h2>Submit Feedback</h2>
+                    <p>Help us improve by sharing your feedback or concerns</p>
+                    
+                    <form id="complaint-form">
+                        <div class="form-group">
+                            <label for="complaint-type">Feedback Type</label>
+                            <select id="complaint-type" name="type" required>
+                                <option value="">Select feedback type</option>
+                                <option value="facility">Facility Issue</option>
+                                <option value="class">Class Related</option>
+                                <option value="trainer">Trainer Feedback</option>
+                                <option value="service">General Service</option>
+                                <option value="suggestion">Suggestion</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group" id="specific-selection" style="display: none;">
+                            <label id="specific-label">Select Specific Item</label>
+                            <select id="specific-item" name="specificItem">
+                                <option value="">Please select</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="complaint-subject">Subject</label>
+                            <input type="text" id="complaint-subject" name="subject" placeholder="Brief description of your feedback" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="complaint-description">Description</label>
+                            <textarea id="complaint-description" name="description" rows="5" placeholder="Please provide detailed information about your feedback..." required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="priority">Priority Level</label>
+                            <select id="priority" name="priority" required>
+                                <option value="low">Low</option>
+                                <option value="medium" selected>Medium</option>
+                                <option value="high">High</option>
+                                <option value="urgent">Urgent</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Submit Feedback</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/bookings.js"></script>
+</body>
+</html>
