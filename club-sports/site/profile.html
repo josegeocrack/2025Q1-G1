@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Elite Sports Club</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Elite Sports Club</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="dashboard.html" class="nav-link">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a href="profile.html" class="nav-link active">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a href="bookings.html" class="nav-link">Bookings & Feedback</a>
+                </li>
+                <li class="nav-item" id="admin-nav" style="display: none;">
+                    <a href="admin.html" class="nav-link">Admin</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" id="logout-btn">Logout</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="profile-main">
+        <div class="container">
+            <div class="profile-header">
+                <h1>My Profile</h1>
+                <p>Your personal information</p>
+            </div>
+
+            <div class="profile-content">
+                <div class="profile-card">
+                    <div class="profile-avatar">
+                        <div class="avatar-circle">
+                            <span id="avatar-initials">JD</span>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-info">
+                        <div class="info-group">
+                            <label>Full Name</label>
+                            <div class="info-value" id="profile-name">-</div>
+                        </div>
+                        
+                        <div class="info-group">
+                            <label>Email Address</label>
+                            <div class="info-value" id="profile-email">-</div>
+                        </div>
+                        
+                        <div class="info-group">
+                            <label>Phone Number</label>
+                            <div class="info-value" id="profile-phone">-</div>
+                        </div>
+                        
+                        <div class="info-group">
+                            <label>Member Since</label>
+                            <div class="info-value" id="profile-join-date">-</div>
+                        </div>
+                        
+                        <div class="info-group">
+                            <label>Membership Status</label>
+                            <div class="info-value">
+                                <span class="status-badge active">Active</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Membership Stats -->
+                <div class="membership-stats">
+                    <h2>Membership Statistics</h2>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number" id="total-facility-bookings">0</span>
+                            <span class="stat-label">Facility Bookings</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" id="total-class-enrollments">0</span>
+                            <span class="stat-label">Class Enrollments</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" id="total-complaints">0</span>
+                            <span class="stat-label">Feedback Submitted</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" id="favorite-facility">-</span>
+                            <span class="stat-label">Favorite Facility</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Bookings -->
+                <div class="recent-bookings">
+                    <h2>Recent Bookings</h2>
+                    <div class="bookings-list" id="recent-bookings-list">
+                        <div class="no-data">No recent bookings</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/profile.js"></script>
+</body>
+</html>
