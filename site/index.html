@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Sports Club</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Elite Sports Club</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link active" id="home-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link" id="about-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#facilities" class="nav-link" id="facilities-link">Facilities</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#classes" class="nav-link" id="classes-link">Classes</a>
+                </li>
+                <li class="nav-item" id="bookings-nav-item" style="display: none;">
+                    <a href="#bookings" class="nav-link" id="bookings-link">Bookings</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link login-btn">Login</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section (shown by default, hidden after login) -->
+    <main id="hero-section">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Welcome to Elite Sports Club</h1>
+                <p>Your premier destination for fitness, sports, and wellness</p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn btn-primary login-btn">Join Now</a>
+                    <a href="#about" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <h2>About Our Club</h2>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p>Elite Sports Club has been serving the community for over 15 years, providing world-class facilities and expert instruction across a wide range of sports and fitness activities.</p>
+                        <p>Our mission is to promote health, wellness, and athletic excellence in a welcoming and supportive environment.</p>
+                        <ul class="features-list">
+                            <li>State-of-the-art equipment</li>
+                            <li>Certified professional trainers</li>
+                            <li>Flexible membership options</li>
+                            <li>Community-focused environment</li>
+                        </ul>
+                    </div>
+                    <div class="about-image">
+                        <img src="images/facilities.png" alt="Club facilities">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Facilities Section -->
+        <section id="facilities" class="facilities">
+            <div class="container">
+                <h2>Our Facilities</h2>
+                <div class="facilities-grid">
+                    <div class="facility-card">
+                        <img src="images/gym.png" alt="Gym">
+                        <h3>Modern Gym</h3>
+                        <p>Fully equipped with the latest cardio and strength training equipment</p>
+                    </div>
+                    <div class="facility-card">
+                        <img src="images/pool.png" alt="Pool">
+                        <h3>Swimming Pool</h3>
+                        <p>Olympic-size pool for swimming laps, water aerobics, and lessons</p>
+                    </div>
+                    <div class="facility-card">
+                        <img src="images/tenis.png" alt="Tennis Court">
+                        <h3>Tennis Courts</h3>
+                        <p>Professional-grade courts for tennis lessons and tournaments</p>
+                    </div>
+                    <div class="facility-card">
+                        <img src="images/basket.png" alt="Basketball Court">
+                        <h3>Basketball Court</h3>
+                        <p>Indoor court for basketball games and training sessions</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Classes Section -->
+        <section id="classes" class="classes">
+            <div class="container">
+                <h2>Classes & Programs</h2>
+                <div class="classes-grid">
+                    <div class="class-card">
+                        <h3>Pilates</h3>
+                        <p>Improve flexibility and core strength</p>
+                    </div>
+                    <div class="class-card">
+                        <h3>CrossFit</h3>
+                        <p>High-intensity functional fitness</p>
+                    </div>
+                    <div class="class-card">
+                        <h3>Spinning</h3>
+                        <p>Learn spinning or improve technique</p>
+                    </div>
+                    <div class="class-card">
+                        <h3>Zumba</h3>
+                        <p>Dance lessons</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Bookings Section (hidden by default, shown after login) -->
+    <div id="bookings-section" style="display: none;">
+        <!-- Welcome Header -->
+        <div class="user-welcome-header">
+            <div class="container">
+                <div class="welcome-content">
+                    <h1>Welcome back, <span id="user-name-display">User</span>!</h1>
+                    <p>Ready to book your next workout session?</p>
+                </div>
+            </div>
+        </div>
+        
+        <main class="main-content">
+            <div class="container">
+                <h1>Bookings & Feedback</h1>
+                <p>Manage your reservations and provide feedback</p>
+
+                <div class="section-buttons">
+                    <button class="section-btn active" data-section="facility-booking">Facility Booking</button>
+                    <button class="section-btn" data-section="class-enrollment">Class Enrollment</button>
+                    <button class="section-btn" data-section="feedback-form">Submit Feedback</button>
+                    <button class="section-btn" data-section="my-reservations">My Reservations</button>
+                    <button class="section-btn" data-section="my-inscriptions">My Inscriptions</button>
+                    <button class="section-btn" data-section="my-feedback">My Feedback</button>
+                </div>
+
+                <!-- Facility Booking Section -->
+                <div id="facility-booking" class="booking-section active">
+                    <h2>Book a Facility</h2>
+                    <p>Reserve your preferred facility for your workout session</p>
+
+                    <form id="facility-booking-form" class="booking-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="facility-type">Facility Type</label>
+                                <select id="facility-type" required>
+                                    <option value="">Select a facility</option>
+                                    <option value="gym">Modern Gym</option>
+                                    <option value="pool">Swimming Pool</option>
+                                    <option value="tennis">Tennis Court</option>
+                                    <option value="basketball">Basketball Court</option>
+                                    <option value="yoga-room">Yoga Room</option>
+                                    <option value="squash">Squash Court</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="booking-date">Date</label>
+                                <input type="date" id="booking-date" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="booking-time">Time Slot</label>
+                            <select id="booking-time" required>
+                                <option value="">Select time</option>
+                                <option value="06:00">6:00 AM - 7:00 AM</option>
+                                <option value="07:00">7:00 AM - 8:00 AM</option>
+                                <option value="08:00">8:00 AM - 9:00 AM</option>
+                                <option value="09:00">9:00 AM - 10:00 AM</option>
+                                <option value="10:00">10:00 AM - 11:00 AM</option>
+                                <option value="11:00">11:00 AM - 12:00 PM</option>
+                                <option value="12:00">12:00 PM - 1:00 PM</option>
+                                <option value="13:00">1:00 PM - 2:00 PM</option>
+                                <option value="14:00">2:00 PM - 3:00 PM</option>
+                                <option value="15:00">3:00 PM - 4:00 PM</option>
+                                <option value="16:00">4:00 PM - 5:00 PM</option>
+                                <option value="17:00">5:00 PM - 6:00 PM</option>
+                                <option value="18:00">6:00 PM - 7:00 PM</option>
+                                <option value="19:00">7:00 PM - 8:00 PM</option>
+                                <option value="20:00">8:00 PM - 9:00 PM</option>
+                            </select>
+                        </div>
+
+                        <div id="availability-status" class="availability-check" style="display: none;">
+                            <div class="availability-message"></div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Book Facility</button>
+                    </form>
+                </div>
+
+                <!-- Class Enrollment Section -->
+                <div id="class-enrollment" class="booking-section">
+                    <h2>Class Enrollment</h2>
+                    <p>Join our amazing fitness classes and programs</p>
+
+                    <form id="class-enrollment-form" class="booking-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="class-type">Class Type</label>
+                                <select id="class-type" required>
+                                    <option value="">Select a class</option>
+                                    <!-- Se cargarán dinámicamente -->
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="class-date">Date</label>
+                                <select id="class-date" required disabled>
+                                    <option value="">First select a class</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="class-time">Time</label>
+                            <select id="class-time" required disabled>
+                                <option value="">First select a date</option>
+                            </select>
+                        </div>
+
+                        <div id="class-info" class="class-info-display" style="display: none;">
+                            <div class="info-card">
+                                <h4>Class Details</h4>
+                                <div id="class-details-content">
+                                    <!-- Detalles se cargarán aquí -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Enroll in Class</button>
+                    </form>
+                </div>
+
+                          <!-- Feedback Form Section -->
+                <div id="feedback-form" class="booking-section">
+                    <h2>Submit Feedback</h2>
+                    <p>Share your experience and help us improve our services</p>
+
+                    <form id="feedback-submission-form" class="booking-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="feedback-type">Feedback Type</label>
+                                <select id="feedback-type" name="type" required>
+                                    <option value="">Select feedback type</option>
+                                    <option value="instalacion">Facility Feedback</option>
+                                    <option value="profesor">Instructor Feedback</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group" id="feedback-target-group" style="display: none;">
+                                <label for="feedback-target" id="feedback-target-label">Select target:</label>
+                                <select id="feedback-target" name="target">
+                                    <option value="">Select an option</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="feedback-priority">Priority</label>
+                                <select id="feedback-priority" name="priority" required>
+                                    <option value="">Select priority</option>
+                                    <option value="low">Low</option>
+                                    <option value="medium">Medium</option>
+                                    <option value="high">High</option>
+                                    <option value="urgent">Urgent</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="feedback-title">Title</label>
+                                <input type="text" id="feedback-title" name="title" required maxlength="100" 
+                                    placeholder="Brief summary of your feedback">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="feedback-description">Description</label>
+                            <textarea id="feedback-description" name="description" required rows="4" 
+                                    placeholder="Please provide detailed feedback..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Submit Feedback</button>
+                    </form>
+
+                    <div id="feedback-result" class="result-message" style="display: none;"></div>
+                </div>
+
+                <!-- My Reservations Section -->
+                <div id="my-reservations" class="booking-section">
+                    <h2>My Reservations</h2>
+                    <p>View and manage your facility bookings</p>
+                    
+                    <div id="reservations-loading" class="loading-spinner" style="display: none;">
+                        <p>Loading your reservations...</p>
+                    </div>
+                    
+                    <div id="reservations-error" class="error-message" style="display: none;">
+                        <p>Error loading reservations. Please try again.</p>
+                        <button onclick="loadUserReservations()" class="btn btn-secondary">Retry</button>
+                    </div>
+                    
+                    <div id="reservations-container">
+                        <div id="reservations-empty" style="display: none;">
+                            <div class="empty-state">
+                                <h3>No reservations found</h3>
+                                <p>You haven't made any facility bookings yet.</p>
+                                <button class="btn btn-primary section-btn" data-section="facility-booking">Make Your First Booking</button>
+                            </div>
+                        </div>
+                        
+                        <div id="reservations-list" class="reservations-grid">
+                            <!-- Las reservas se cargarán dinámicamente aquí -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- My Inscriptions Section -->
+                <div id="my-inscriptions" class="booking-section">
+                    <h2>My Class Inscriptions</h2>
+                    <p>View and manage your class enrollments</p>
+                    
+                    <div id="inscriptions-loading" class="loading-spinner" style="display: none;">
+                        <p>Loading your inscriptions...</p>
+                    </div>
+                    
+                    <div id="inscriptions-error" class="error-message" style="display: none;">
+                        <p>Error loading inscriptions. Please try again.</p>
+                        <button onclick="loadUserInscriptions()" class="btn btn-secondary">Retry</button>
+                    </div>
+                    
+                    <div id="inscriptions-container">
+                        <div id="inscriptions-empty" style="display: none;">
+                            <div class="empty-state">
+                                <h3>No inscriptions found</h3>
+                                <p>You haven't enrolled in any classes yet.</p>
+                                <button class="btn btn-primary section-btn" data-section="class-enrollment">Enroll in Your First Class</button>
+                            </div>
+                        </div>
+                        
+                        <div id="inscriptions-list" class="reservations-grid">
+                            <!-- Las inscripciones se cargarán dinámicamente aquí -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- My Feedback Section -->
+                <div id="my-feedback" class="booking-section">
+                    <h2>My Feedback</h2>
+                    <p>View and track your submitted feedback</p>
+                    
+                    <div id="feedback-loading" class="loading-spinner" style="display: none;">
+                        <p>Loading your feedback...</p>
+                    </div>
+                    
+                    <div id="feedback-error" class="error-message" style="display: none;">
+                        <p>Error loading feedback. Please try again.</p>
+                        <button onclick="loadUserFeedback()" class="btn btn-secondary">Retry</button>
+                    </div>
+                    
+                    <div id="feedback-container">
+                        <div id="feedback-empty" style="display: none;">
+                            <div class="empty-state">
+                                <h3>No feedback found</h3>
+                                <p>You haven't submitted any feedback yet.</p>
+                                <button class="btn btn-primary section-btn" data-section="feedback-form">Submit Your First Feedback</button>
+                            </div>
+                        </div>
+                        
+                        <div id="feedback-list" class="reservations-grid">
+                            <!-- El feedback se cargará dinámicamente aquí -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>123 Sports Avenue<br>
+                    Fitness City, FC 12345<br>
+                    Phone: (555) 123-4567<br>
+                    Email: info@elitesportsclub.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Hours</h3>
+                    <p>Monday - Friday: 5:00 AM - 11:00 PM<br>
+                    Saturday - Sunday: 6:00 AM - 10:00 PM</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#">Facebook</a>
+                        <a href="#">Instagram</a>
+                        <a href="#">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Elite Sports Club. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="config.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>
